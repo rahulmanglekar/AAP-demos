@@ -5,4 +5,4 @@
     - name: Ensure Apache is restarted
       ansible.builtin.service:
         name: httpd
-        state: stop
+        state: stopped
