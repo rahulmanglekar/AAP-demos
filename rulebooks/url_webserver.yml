@@ -1,0 +1,16 @@
+---
+- name: Review webservers status
+  hosts: all
+  sources:
+    - name: URL to review
+      ansible.eda.url_check:
+        urls:
+          - http://10.64.64.190
+ 
+  rules:
+    - name: Webserver is down
+      condition: event.url_check.status == "down"
+      action:
+        run_job_template:
+          name: "WebServer Restart"
+          organization: "Default"
