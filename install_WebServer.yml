@@ -16,12 +16,6 @@
         name: "{{ apache_packages }}"
         state: present
 
-    - name: Ensure Apache is enabled and started
-      service:
-        name: "{{ apache_service }}"
-        state: started
-        enabled: true
-
     - name: Create index.html with a welcome message
       copy:
         dest: "{{ web_root }}/{{ index_file }}"
@@ -29,6 +23,12 @@
         owner: apache
         group: apache
         mode: '0644'
+        
+    - name: Ensure Apache is enabled and started
+      service:
+        name: "{{ apache_service }}"
+        state: started
+        enabled: true
 
     - name: Open HTTP port in the firewall (if firewalld is used)
       firewalld:
