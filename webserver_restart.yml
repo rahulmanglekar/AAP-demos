@@ -1,7 +1,6 @@
 ---
 - name: Restart Apache web server on RHEL
   hosts: all
-  become: true
   tasks:
     - name: Ensure Apache is restarted
       ansible.builtin.service:
