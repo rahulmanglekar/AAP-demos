@@ -1,12 +1,12 @@
 ---
-- name: Review webservers status
+- name: Check status
   hosts: all
   sources:
-    - name: URL to review
+    - name: URL to check
       ansible.eda.url_check:
         urls:
           - http://10.64.64.190
-
+ 
   rules:
     - name: Print output of event.payload
       condition: event.payload is defined
