@@ -8,10 +8,9 @@
           - http://10.64.64.190
  
   rules:
-    - name: Print output of 
-      condition: event is defined
+    - name: debug with multiple messages
+      condition: event.i >= 5
       action:
-        run_module:
-          name: ansible.builtin.debug
-          module_args:
-            msg: "{{ event }}"
+        debug:
+          msg:
+             - "Message 1 {{ event }}"
