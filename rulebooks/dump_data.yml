@@ -9,9 +9,9 @@
  
   rules:
     - name: Print output of event.payload
-      condition: event.payload is defined
+      condition: event.url is defined
       action:
         run_module:
           name: ansible.builtin.debug
           module_args:
-            msg: "{{ event.payload }}"
+            msg: "{{ event.url }}"
