@@ -8,10 +8,10 @@
           - http://10.64.64.190
  
   rules:
-    - name: Print output of event.payload
-      condition: event.url is defined
+    - name: Print output of 
+      condition: event is defined
       action:
         run_module:
           name: ansible.builtin.debug
           module_args:
-            msg: "{{ event.url }}"
+            msg: "{{ event }}"
