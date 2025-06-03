@@ -9,7 +9,7 @@
 
   rules:
     - name: Insert Error Message Info into MySQL DB
-      condition: event.status == "down"
+      condition: event.url_check.status == "down"
       action:
         run_job_template:
           name: "DB Update"
