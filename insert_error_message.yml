@@ -15,7 +15,7 @@
   tasks:
     - name: Ensure MySQL client is installed
       ansible.builtin.package:
-        name: mysql-client
+        name: mysql
         state: present
 
     - name: Insert entry into MySQL database
