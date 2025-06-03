@@ -3,7 +3,7 @@
   hosts: all
   become: yes
   vars:
-    db_host: "localhost"
+    db_host: "100.69.84.37"
     db_user: "mysql"
     db_pass: "redhat"
     db_name: "aiopsdb"
