@@ -11,5 +11,6 @@
     - name: Insert Error Message Info into MySQL DB
       condition: event.status == "down"
       action:
-        run_playbook:
-          name: ../insert_error_message.yml
+        run_job_template:
+          name: "DB Update"
+          organization: "Default"
