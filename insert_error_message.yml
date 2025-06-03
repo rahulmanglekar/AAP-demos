@@ -20,5 +20,3 @@
     - name: Insert entry into MySQL database
       ansible.builtin.shell: |
         mysql -h {{ db_host }} -u {{ db_user }} -p'{{ db_pass }}' {{ db_name }} -e "{{ sql_template }}"
-      args:
-        warn: false
