@@ -9,9 +9,8 @@
     db_name: "aiopsdb"
     # This will be dynamically templated during playbook execution
     sql_template: >
-      INSERT INTO Error_Table (Error_Message, Server_Name)
-      VALUES ('Nginx service is not running.','{{ ansible_hostname }}');
-
+        SELECT * from Error_Table;
+    
   tasks:
     - name: Ensure MySQL client is installed
       ansible.builtin.package:
