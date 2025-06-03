@@ -1,6 +1,6 @@
 ---
 - name: Insert Error Message Info into MySQL DB
-  hosts: aiops.demolab.com
+  hosts: all
   become: yes
   vars:
     db_host: "localhost"
